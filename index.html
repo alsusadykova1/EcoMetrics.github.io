@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMetrics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <!-- ГАРАНТИРОВАННО РАБОЧАЯ НАВИГАЦИЯ -->
+    <nav id="navbar" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+">
+        <div><strong>EcoMetrics</strong></div>
+        <div>
+            <a href="#benefits" style="margin: 0 10px; color: #1e293b; text-decoration: none;">Преимущества</a>
+            <a href="#how-it-works" style="margin: 0 10px; color: #1e293b; text-decoration: none;">Как работает</a>
+            <a href="#testimonials" style="margin: 0 10px; color: #1e293b; text-decoration: none;">Клиенты</a>
+            <a href="#contact" style="margin: 0 10px; color: #1e293b; text-decoration: none;">Контакты</a>
+        </div>
+        <button id="mobile-menu-button" style="
+    display: none;
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  ">Меню</button>
+    </nav>
+
+    <style>
+        @media (max-width: 768px) {
+            #navbar>div:nth-child(2) {
+                display: none !important;
+            }
+
+            #mobile-menu-button {
+                display: block !important;
+            }
+        }
+    </style>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Background Image with Overlay -->
+        <div class="hero-bg-overlay">
+            <img src="https://images.unsplash.com/photo-1658806283210-6d7330062704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjY0OTI3MTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Abstract tech background" />
+        </div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Автоматизируйте ESG-отчётность <span class="hero-highlight">за 1 день</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                EcoMetrics — первая платформа в СНГ, которая в реальном времени отслеживает выбросы CO₂,
+                энергопотребление и водной след вашего предприятия
+            </p>
+
+            <button id="demo-button" class="hero-button">
+                Получить демо для вашей компании
+                <!-- Inline SVG for ArrowRight from Lucide -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Floating Elements (static in pure CSS/JS; animations simplified) -->
+        <div class="floating-element floating-element--top"></div>
+        <div class="floating-element floating-element--bottom"></div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Почему выбирают <span class="text-highlight">EcoMetrics</span>
+                </h2>
+                <p class="section-subtitle">
+                    Современная платформа для управления ESG-показателями вашего бизнеса
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1: Точность -->
+                <div class="benefit-card" data-index="0" data-color="#10B981">
+                    <div class="benefit-icon-wrapper">
+                        <!-- Activity Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-2.44a2 2 0 0 0-1.84 1.14L17 15l-3-3-3 3-1.16-1.86A2 2 0 0 0 7.44 12H2" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Точность</h3>
+                    <p class="benefit-desc">
+                        Данные в реальном времени из ваших систем — без Excel
+                    </p>
+                </div>
+
+                <!-- Benefit 2: Соответствие -->
+                <div class="benefit-card" data-index="1" data-color="#3B82F6">
+                    <div class="benefit-icon-wrapper">
+                        <!-- Shield Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Соответствие</h3>
+                    <p class="benefit-desc">
+                        Автоматическая генерация отчётов по стандартам EU Taxonomy
+                    </p>
+                </div>
+
+                <!-- Benefit 3: Экономия -->
+                <div class="benefit-card" data-index="2" data-color="#8B5CF6">
+                    <div class="benefit-icon-wrapper">
+                        <!-- TrendingUp Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Экономия</h3>
+                    <p class="benefit-desc">
+                        Снижаем затраты на энергоресурсы до 22% за год
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <!-- Stat 1: Предприятий -->
+                <div class="stat-card" data-index="0">
+                    <div class="stat-icon-wrapper">
+                        <!-- Building2 Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14" />
+                            <path d="M9 21h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H9" />
+                            <path d="M9 7v14" />
+                            <path d="M3 17h18" />
+                            <path d="M3 12h18" />
+                        </svg>
+                    </div>
+                    <div class="stat-value">150+</div>
+                    <p class="stat-label">Предприятий используют платформу</p>
+                </div>
+
+                <!-- Stat 2: Пользователей -->
+                <div class="stat-card" data-index="1">
+                    <div class="stat-icon-wrapper">
+                        <!-- Users Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <div class="stat-value">12K+</div>
+                    <p class="stat-label">Активных пользователей</p>
+                </div>
+
+                <!-- Stat 3: CO₂ -->
+                <div class="stat-card" data-index="2">
+                    <div class="stat-icon-wrapper">
+                        <!-- Leaf Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.88 7.37a7 7 0 0 1 7.37-1.12A7.002 7.002 0 0 1 11 20Z" />
+                            <path d="M15 14c0-3.22-.66-6-4-6s-4 2.78-4 6" />
+                        </svg>
+                    </div>
+                    <div class="stat-value">4.2M</div>
+                    <p class="stat-label">Тонн CO₂ сокращено</p>
+                </div>
+
+                <!-- Stat 4: Точность -->
+                <div class="stat-card" data-index="3">
+                    <div class="stat-icon-wrapper">
+                        <!-- TrendingUp Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="stat-value">99.8%</div>
+                    <p class="stat-label">Точность данных</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Технологии будущего <span class="text-highlight">уже сегодня</span>
+                </h2>
+                <p class="section-subtitle">
+                    Мощная инфраструктура и передовые технологии для вашего бизнеса
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" data-index="0">
+                    <div class="feature-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NjYzODQzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <!-- Database Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Интеграция с любыми системами</h3>
+                        <p class="feature-desc">
+                            Подключаемся к 1С, ERP, IoT-датчикам и другим источникам данных без необходимости их замены
+                        </p>
+                        <div class="feature-decor"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card" data-index="1">
+                    <div class="feature-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1618063270074-090417d4c242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGdyZWVuJTIwcGxhbmV0fGVufDF8fHx8MTc2NjQ5MjcxMnww&ixlib=rb-4.1.0&q=80&w=1080">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <!-- Cloud Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Облачное хранение</h3>
+                        <p class="feature-desc">
+                            Все данные надёжно хранятся в облаке с резервным копированием и доступом из любой точки мира
+                        </p>
+                        <div class="feature-decor"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card" data-index="2">
+                    <div class="feature-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1658806283210-6d7330062704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjY0OTI3MTF8MA&ixlib=rb-4.1.0&q=80&w=1080">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <!-- Lock Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Безопасность данных</h3>
+                        <p class="feature-desc">
+                            Шифрование на уровне банков, соответствие стандартам GDPR и 152-ФЗ
+                        </p>
+                        <div class="feature-decor"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card" data-index="3">
+                    <div class="feature-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1658806283210-6d7330062704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjY0OTI3MTF8MA&ixlib=rb-4.1.0&q=80&w=1080">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <!-- Zap (Lightning) Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Быстрое развёртывание</h3>
+                        <p class="feature-desc">
+                            От договора до первого отчёта — менее 3 недель. Без длительной интеграции
+                        </p>
+                        <div class="feature-decor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Как это работает</h2>
+                <p class="section-subtitle">
+                    Простой процесс интеграции за 4 шага
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1: Подключение -->
+                <div class="step-card" data-index="0">
+                    <div class="step-number">1</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Zap Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Подключение</h3>
+                    <p class="step-desc">Подключаемся к вашим системам (1С, IoT-датчики и др.)</p>
+                    <div class="connector-line" data-last="false"></div>
+                </div>
+
+                <!-- Step 2: Анализ -->
+                <div class="step-card" data-index="1">
+                    <div class="step-number">2</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Activity Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-2.44a2 2 0 0 0-1.84 1.14L17 15l-3-3-3 3-1.16-1.86A2 2 0 0 0 7.44 12H2" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Анализ</h3>
+                    <p class="step-desc">Платформа собирает и анализирует данные</p>
+                    <div class="connector-line" data-last="false"></div>
+                </div>
+
+                <!-- Step 3: Отчётность -->
+                <div class="step-card" data-index="2">
+                    <div class="step-number">3</div>
+                    <div class="step-icon-wrapper">
+                        <!-- FileCheck Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <path d="M9 15l1 1 3-3" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Отчётность</h3>
+                    <p class="step-desc">Формируем дашборд и ESG-отчёт</p>
+                    <div class="connector-line" data-last="false"></div>
+                </div>
+
+                <!-- Step 4: Оптимизация -->
+                <div class="step-card" data-index="3">
+                    <div class="step-number">4</div>
+                    <div class="step-icon-wrapper">
+                        <!-- Leaf Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.88 7.37a7 7 0 0 1 7.37-1.12A7.002 7.002 0 0 1 11 20Z" />
+                            <path d="M15 14c0-3.22-.66-6-4-6s-4 2.78-4 6" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Оптимизация</h3>
+                    <p class="step-desc">Даём рекомендации по оптимизации</p>
+                    <div class="connector-line" data-last="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Что говорят наши клиенты</h2>
+                <p class="section-subtitle">
+                    Отзывы компаний, которые уже трансформировали свою ESG-отчётность
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-index="0">
+                    <div class="quote-icon-wrapper">
+                        <!-- Quote Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                            <path
+                                d="M18 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "EcoMetrics помог нам сократить время на подготовку ESG-отчётов с 3 месяцев до 2 недель.
+                        Платформа интуитивна и надёжна."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div class="author-info">
+                            <div class="author-name">Александр Петров</div>
+                            <div class="author-position">Директор по устойчивому развитию</div>
+                            <div class="author-company">X5 Retail Group</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-decor"></div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-index="1">
+                    <div class="quote-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                            <path
+                                d="M18 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "Наконец-то мы получили точные данные в реальном времени. Это изменило наш подход к управлению
+                        энергоресурсами."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕС</div>
+                        <div class="author-info">
+                            <div class="author-name">Елена Смирнова</div>
+                            <div class="author-position">CFO</div>
+                            <div class="author-company">Лукойл</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-decor"></div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-index="2">
+                    <div class="quote-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                            <path
+                                d="M18 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V15c0 1.25.75 2 2 2h1Z" />
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "Внедрение прошло быстро и без проблем. Команда EcoMetrics обеспечила отличную поддержку на всех
+                        этапах."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">МИ</div>
+                        <div class="author-info">
+                            <div class="author-name">Михаил Иванов</div>
+                            <div class="author-position">ESG-менеджер</div>
+                            <div class="author-company">РЖД</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-decor"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trust Section -->
+    <section id="trust" class="trust-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Доверяют лидеры отрасли</h2>
+                <p class="section-subtitle">
+                    Ведущие компании СНГ выбирают EcoMetrics для ESG-отчётности
+                </p>
+            </div>
+
+            <!-- Company Logos -->
+            <div class="logos-container">
+                <div class="logo-item" data-index="0" style="width: 8rem;">Лукойл</div>
+                <div class="logo-item" data-index="1" style="width: 10rem;">X5 Retail Group</div>
+                <div class="logo-item" data-index="2" style="width: 7rem;">РЖД</div>
+                <div class="logo-item" data-index="3" style="width: 9rem;">Газпром</div>
+            </div>
+
+            <!-- Case Study Card -->
+            <div class="case-study-card">
+                <div class="case-icon-wrapper">
+                    <!-- TrendingUp Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">Результат внедрения</h3>
+                    <p class="case-text">
+                        Внедрено на <span class="case-highlight">12 заводах</span> →
+                        сокращение CO₂ на <span class="case-highlight">18%</span> за 6 месяцев
+                    </p>
+                    <div class="case-metrics">
+                        <div class="metric-item">
+                            <span class="metric-label">Экономия</span>
+                            <p class="metric-value">₽12.5M</p>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Время внедрения</span>
+                            <p class="metric-value">21 день</p>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">ROI</span>
+                            <p class="metric-value">340%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container max-w-4xl">
+            <div class="section-header">
+                <h2 class="section-title">Готовы стать экологичнее и эффективнее?</h2>
+                <p class="section-subtitle">
+                    Запросите персональное демо и узнайте, как EcoMetrics может трансформировать ваш бизнес
+                </p>
+            </div>
+
+            <div class="cta-demo-wrapper">
+                <button id="open-demo-btn" class="cta-demo-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    Посмотреть интерактивное демо
+                </button>
+            </div>
+
+
+            <!-- Dashboard Modal -->
+            <div id="dashboard-modal" class="dashboard-modal">
+                <div class="dashboard-content">
+                    <!-- Header -->
+                    <div class="dashboard-header">
+                        <div>
+                            <h2>EcoMetrics Dashboard</h2>
+                            <p>ООО "ТехноПром" • Режим реального времени</p>
+                        </div>
+                        <button id="close-dashboard" class="dashboard-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="dashboard-tabs">
+                        <button class="dashboard-tab active">Обзор</button>
+                        <button class="dashboard-tab">Экология</button>
+                        <button class="dashboard-tab">Социум</button>
+                        <button class="dashboard-tab">Управление</button>
+                    </div>
+
+                    <!-- Period Selector -->
+                    <div class="dashboard-period">
+                        <div class="period-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Период:
+                        </div>
+                        <div class="period-buttons">
+                            <button class="period-btn">День</button>
+                            <button class="period-btn">Неделя</button>
+                            <button class="period-btn active">Месяц</button>
+                            <button class="period-btn">Год</button>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Cards -->
+                    <div class="dashboard-metrics-grid">
+                        <!-- CO2 -->
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #10B98120;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M11 20A7 7 0 0 1 9.88 7.37a7 7 0 0 1 7.37-1.12A7.002 7.002 0 0 1 11 20Z" />
+                                    <path d="M15 14c0-3.22-.66-6-4-6s-4 2.78-4 6" />
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <div class="metric-title">Выбросы CO₂</div>
+                                <div class="metric-value">245.9</div>
+                                <div class="metric-unit">тонн/день</div>
+                                <div class="metric-trend">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                        <polyline points="17 18 23 18 23 12"></polyline>
+                                    </svg>
+                                    -12.5% за месяц
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Energy -->
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #3B82F620;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <div class="metric-title">Энергопотребление</div>
+                                <div class="metric-value">1847</div>
+                                <div class="metric-unit">кВт·ч</div>
+                                <div class="metric-trend">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                        <polyline points="17 18 23 18 23 12"></polyline>
+                                    </svg>
+                                    -8.3% за месяц
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Water -->
+                        <div class="metric-card">
+                            <div class="metric-icon" style="background-color: #8B5CF620;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M12 22c1.34 0 2.65-0.46 3.66-1.31L18 18l-2.66-2.69C14.35 14.46 13.04 14 11.7 14c-1.34 0-2.65 0.46-3.66 1.31L6 18l2.66 2.69C12.65 21.54 13.96 22 15.3 22z" />
+                                    <path d="M12 14v8" />
+                                </svg>
+                            </div>
+                            <div class="metric-info">
+                                <div class="metric-title">Водопотребление</div>
+                                <div class="metric-value">339.6</div>
+                                <div class="metric-unit">м³/день</div>
+                                <div class="metric-trend">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                        <polyline points="17 18 23 18 23 12"></polyline>
+                                    </svg>
+                                    -15.2% за месяц
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="dashboard-charts-row">
+                        <!-- CO2 Chart -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Динамика выбросов CO₂</h3>
+                            <div class="chart-area">
+                                <div class="chart-line"
+                                    style="height: 200px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; position: relative; padding: 1rem;">
+                                    <!-- Simple line chart with SVG path -->
+                                    <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
+                                        <path d="M0,50 C50,30 150,70 200,40" stroke="#10B981" stroke-width="2"
+                                            fill="none" />
+                                        <path d="M0,50 C50,30 150,70 200,40" stroke="url(#grad)" stroke-width="10"
+                                            fill="none" opacity="0.2" />
+                                        <defs>
+                                            <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#10B981" stop-opacity="0.3" />
+                                                <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div
+                                        style="position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; color: #9CA3AF; font-size: 0.75rem; margin-top: 0.5rem;">
+                                        <span>Янв</span><span>Фев</span><span>Мар</span><span>Апр</span><span>Май</span><span>Июн</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Energy Chart -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Энергопотребление по дням</h3>
+                            <div class="chart-area">
+                                <div class="chart-bar"
+                                    style="height: 200px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; position: relative; padding: 1rem;">
+                                    <!-- Simple bar chart -->
+                                    <div style="display: flex; align-items: flex-end; height: 100%; gap: 4px;">
+                                        <div
+                                            style="width: 20px; height: 80%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 60%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 70%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 90%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 50%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 30%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                        <div
+                                            style="width: 20px; height: 40%; background: #3B82F6; border-radius: 4px 4px 0 0;">
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; color: #9CA3AF; font-size: 0.75rem; margin-top: 0.5rem;">
+                                        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row -->
+                    <div class="dashboard-bottom-row">
+                        <!-- Water Pie Chart -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Распределение водопотребления</h3>
+                            <div class="chart-pie"
+                                style="height: 200px; background: rgba(139, 92, 246, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative;">
+                                <!-- Simple pie chart with SVG -->
+                                <svg width="150" height="150" viewBox="0 0 150 150">
+                                    <!-- Green Sector (45%) -->
+                                    <path d="M75,75 L75,0 A75,75 0 0,1 112.5,37.5 Z" fill="#10B981" />
+                                    <!-- Blue Sector (25%) -->
+                                    <path d="M75,75 L112.5,37.5 A75,75 0 0,1 75,150 Z" fill="#3B82F6" />
+                                    <!-- Purple Sector (20%) -->
+                                    <path d="M75,75 L75,150 A75,75 0 0,1 37.5,112.5 Z" fill="#8B5CF6" />
+                                    <!-- Orange Sector (10%) -->
+                                    <path d="M75,75 L37.5,112.5 A75,75 0 0,1 75,75 Z" fill="#F59E0B" />
+                                </svg>
+                                <div
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 0.75rem;">
+                                    <div style="color: #10B981;">Производство 45%</div>
+                                    <div style="color: #3B82F6; margin-top: 0.5rem;">Офисы 25%</div>
+                                    <div style="color: #8B5CF6; margin-top: 0.5rem;">Охлаждение 20%</div>
+                                    <div style="color: #F59E0B; margin-top: 0.5rem;">Прочее 10%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Compliance Progress -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Соответствие стандартам</h3>
+                            <div class="compliance-list">
+                                <div class="compliance-item">
+                                    <div class="compliance-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="16 12 11 17 8 14" />
+                                        </svg>
+                                        GRI Standards
+                                    </div>
+                                    <div class="compliance-progress">
+                                        <div style="width: 100%; height: 8px; background: #10B981; border-radius: 4px;">
+                                        </div>
+                                        <div style="margin-left: 0.5rem; color: #9CA3AF; font-size: 0.75rem;">100%</div>
+                                    </div>
+                                </div>
+
+                                <div class="compliance-item">
+                                    <div class="compliance-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="16 12 11 17 8 14" />
+                                        </svg>
+                                        SASB
+                                    </div>
+                                    <div class="compliance-progress">
+                                        <div style="width: 100%; height: 8px; background: #10B981; border-radius: 4px;">
+                                        </div>
+                                        <div style="margin-left: 0.5rem; color: #9CA3AF; font-size: 0.75rem;">100%</div>
+                                    </div>
+                                </div>
+
+                                <div class="compliance-item">
+                                    <div class="compliance-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="16 12 11 17 8 14" />
+                                        </svg>
+                                        TCFD
+                                    </div>
+                                    <div class="compliance-progress">
+                                        <div style="width: 78%; height: 8px; background: #F59E0B; border-radius: 4px;">
+                                        </div>
+                                        <div style="margin-left: 0.5rem; color: #9CA3AF; font-size: 0.75rem;">78%</div>
+                                    </div>
+                                </div>
+
+                                <div class="compliance-item">
+                                    <div class="compliance-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="16 12 11 17 8 14" />
+                                        </svg>
+                                        CDP
+                                    </div>
+                                    <div class="compliance-progress">
+                                        <div style="width: 100%; height: 8px; background: #10B981; border-radius: 4px;">
+                                        </div>
+                                        <div style="margin-left: 0.5rem; color: #9CA3AF; font-size: 0.75rem;">100%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download Button -->
+                    <div class="dashboard-download">
+                        <button class="download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Скачать полный отчёт ESG (PDF)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="cta-form-container">
+                <!-- Success Message (hidden by default) -->
+                <div id="success-message" class="success-message hidden">
+                    <div class="success-icon-wrapper">
+                        <!-- CircleCheck Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="16 12 11 17 8 14" />
+                        </svg>
+                    </div>
+                    <h3 class="success-title">Спасибо за заявку!</h3>
+                    <p class="success-text">
+                        Наш менеджер свяжется с вами в ближайшее время
+                    </p>
+                </div>
+
+                <!-- Form (visible by default) -->
+                <form id="demo-form" class="form-content space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="name" name="name" required class="form-input"
+                                placeholder="Иван Иванов" />
+                        </div>
+
+                        <div>
+                            <label for="company" class="form-label">Название компании *</label>
+                            <input type="text" id="company" name="company" required class="form-input"
+                                placeholder="ООО «Компания»" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" required class="form-input"
+                                placeholder="email@company.com" />
+                        </div>
+
+                        <div>
+                            <label for="phone" class="form-label">
+                                Телефон <span class="text-muted">(опционально)</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="+7 (999) 123-45-67" />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Запросить демо
+                        <!-- ArrowRight Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <p class="form-note">
+                        Демонстрация займёт 15 минут. Без спама.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col footer-col--wide">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <!-- Leaf Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M11 20A7 7 0 0 1 9.88 7.37a7 7 0 0 1 7.37-1.12A7.002 7.002 0 0 1 11 20Z" />
+                                <path d="M15 14c0-3.22-.66-6-4-6s-4 2.78-4 6" />
+                            </svg>
+                        </div>
+                        <span class="logo-text">EcoMetrics</span>
+                    </div>
+                    <p class="footer-description">
+                        Первая SaaS-платформа в СНГ для автоматизированной ESG-отчётности.
+                        Помогаем предприятиям быть экологичнее и эффективнее.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>info@ecometrics.ru</span>
+                        </li>
+                        <li class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <span>+7 (495) 123-45-67</span>
+                        </li>
+                        <li class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Москва, ул. Инновационная, 42</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Ссылки</h3>
+                    <ul class="links-list">
+                        <li><a href="#" class="footer-link">О платформе</a></li>
+                        <li><a href="#" class="footer-link">Документация</a></li>
+                        <li><a href="#" class="footer-link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer-link">Условия использования</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    © <span id="current-year"></span> EcoMetrics. Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top hidden" aria-label="Вернуться наверх">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+        </svg>
+    </button>
+
+    <!-- Остальные компоненты будут здесь -->
+
+    <script src="script.js"></script>
+    <script src="demo-dashboard.js"></script>
+</body>
+
+</html>
